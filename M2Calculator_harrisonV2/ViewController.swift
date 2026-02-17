@@ -44,25 +44,48 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultLabel:UILabel!
     
     @IBAction func calculateButton(_ sender: Any) {
-        let op1 = Int(operand1TextField.text!)!
-        let op2 = Int(operand2TextField.text!)!
-        let op = selectOperator.title(for: .normal)
+        //let op1 = Int(operand1TextField.text!)!
+        //let op2 = Int(operand2TextField.text!)!
+        //let op = selectOperator.title(for: .normal)!
         
-        if op == "+" {
-            let result = op1 + op2
-            resultLabel.text = "\(result)"
-        }else if op == "-" {
-            let result = op1 - op2
-            resultLabel.text = "\(result)"
-        }else if op == "*" {
-            let result = op1 * op2
-            resultLabel.text = "\(result)"
-        }else if op == "/" {
-            let result = op1 / op2
-            resultLabel.text = "\(result)"
-        }else {
-            //error
+        guard let op1 = Int(operand1TextField.text), let a = Int(op1) else{
+            return
         }
+        guard let op2 = Int(operand2TextField.text), let b = Int(op2) else{
+            return
+        }
+        guard let op = selectOperator.title(for: .normal) else{
+            return
+        }
+        
+        let result = a + b
+        resultLabel.text = "\(result)"
+            }else if op == "-" {
+        let result = a - b
+        resultLabel.text = "\(result)"
+            }else if op == "*" {
+        let result = a * b
+        resultLabel.text = "\(result)"
+            }else if op == "/" {
+        let result = a / b
+        resultLabel.text = "\(result)"
+            }else {
+        //error
+    }/*
+        if let op1 = Int(operand1TextField.text){
+            if let op1 = Int(op1){
+                if let op2 = Int(operand2TextField.text){
+                    if let op2 = Int(op2){
+                        if let op = selectOperator.title(for: .normal){
+                            if op == "+" {
+                                
+                        }
+                    }
+                }
+            }
+        }
+        */
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
