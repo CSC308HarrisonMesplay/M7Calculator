@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     @IBAction func operatorButton(_ sender: Any) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let action = UIAlertAction(title: "+(plus)", style: .default, handler: {(action: UIAlertAction) ->() in self.selectOperator.setTitle("+", for: .normal) })
+        
         
         //plus
         let plusAction = UIAlertAction(title: "+(plus)", style: .default){ _ in
@@ -43,6 +45,13 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var resultLabel:UILabel!
     
+    func showAlert(message: String, title: String? = "Alert"){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
     @IBAction func calculateButton(_ sender: Any) {
         //let op1 = Int(operand1TextField.text!)!
         //let op2 = Int(operand2TextField.text!)!
@@ -71,21 +80,7 @@ class ViewController: UIViewController {
         resultLabel.text = "\(result)"
             }else {
         //error
-    }/*
-        if let op1 = Int(operand1TextField.text){
-            if let op1 = Int(op1){
-                if let op2 = Int(operand2TextField.text){
-                    if let op2 = Int(op2){
-                        if let op = selectOperator.title(for: .normal){
-                            if op == "+" {
-                                
-                        }
-                    }
-                }
-            }
-        }
-        */
-        
+    }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
