@@ -12,32 +12,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var operand2TextField: UITextField!
     @IBOutlet weak var selectOperator: UIButton!
     
+    var selectedOperator: Operator?
+    
     @IBAction func operatorButton(_ sender: Any) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         let action = UIAlertAction(title: "+(plus)", style: .default, handler: {(action: UIAlertAction) ->() in self.selectOperator.setTitle("+", for: .normal) })
         
-        
         //plus
         let plusAction = UIAlertAction(title: "+(plus)", style: .default){ _ in
             self.selectOperator.setTitle("+", for: .normal)
+            self.selectedOperator = .plus
         }
         actionSheet.addAction(plusAction)
         
         //minus
         let minusAction = UIAlertAction(title: "-(minus)", style: .default){_ in
             self.selectOperator.setTitle("-", for: .normal)
+            self.selectOperator = .minus
         }
         actionSheet.addAction(minusAction)
         
         //divide
         let divideAction = UIAlertAction(title: "/(divide)", style: .default){_ in
             self.selectOperator.setTitle("/", for: .normal)
+            self.selectOperator = .divide
         }
         actionSheet.addAction(divideAction)
         
         //multiply
         let multiplyAction = UIAlertAction(title: "*(multiply)", style: .default){_ in
             self.selectOperator.setTitle("*", for: .normal)
+            self.selectOperator = .multiply
         }
         actionSheet.addAction(multiplyAction)
         
@@ -53,34 +58,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func calculateButton(_ sender: Any) {
-        //let op1 = Int(operand1TextField.text!)!
-        //let op2 = Int(operand2TextField.text!)!
-        //let op = selectOperator.title(for: .normal)!
-        
-        guard let op1 = Int(operand1TextField.text), let a = Int(op1) else{
-            return
+        switch op{
+        case .plus:
+            result = a + b
+        case .minus:
+            result = a - b
+        case .multiply:
+            result = a * b
+        case .divide:
+            result = a / d
         }
-        guard let op2 = Int(operand2TextField.text), let b = Int(op2) else{
-            return
-        }
-        guard let op = selectOperator.title(for: .normal) else{
-            return
-        }
-        
-        let result = a + b
-        resultLabel.text = "\(result)"
-            }else if op == "-" {
-        let result = a - b
-        resultLabel.text = "\(result)"
-            }else if op == "*" {
-        let result = a * b
-        resultLabel.text = "\(result)"
-            }else if op == "/" {
-        let result = a / b
-        resultLabel.text = "\(result)"
-            }else {
-        //error
-    }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

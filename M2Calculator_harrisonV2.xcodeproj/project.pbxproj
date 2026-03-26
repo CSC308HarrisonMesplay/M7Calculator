@@ -72,6 +72,14 @@
 		258CBAA12F291ED600B6554C /* M2Calculator_harrisonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = M2Calculator_harrisonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		255C4F772F758A790028A91F /* Model */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		258CBA7E2F291ED400B6554C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -116,6 +124,7 @@
 		255E98932F2BCB4300C19968 /* M2Calculator_harrisonV2Tests */ = {
 			isa = PBXGroup;
 			children = (
+				255C4F772F758A790028A91F /* Model */,
 				255E98922F2BCB4300C19968 /* M2Calculator_harrisonV2Tests.swift */,
 			);
 			path = M2Calculator_harrisonV2Tests;
@@ -163,6 +172,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				255C4F772F758A790028A91F /* Model */,
+			);
 			name = M2Calculator_harrison;
 			packageProductDependencies = (
 			);
@@ -183,6 +195,9 @@
 			dependencies = (
 				258CBA992F291ED600B6554C /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				255C4F772F758A790028A91F /* Model */,
+			);
 			name = M2Calculator_harrisonTests;
 			packageProductDependencies = (
 			);
@@ -202,6 +217,9 @@
 			);
 			dependencies = (
 				258CBAA32F291ED600B6554C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				255C4F772F758A790028A91F /* Model */,
 			);
 			name = M2Calculator_harrisonUITests;
 			packageProductDependencies = (
